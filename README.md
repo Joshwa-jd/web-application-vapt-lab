@@ -16,6 +16,7 @@ Improper input validation allows authentication bypass using crafted SQL payload
 
 ## 🎯 Affected Endpoint
 
+POST /rest/user/login
 
 ---
 
