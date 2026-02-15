@@ -90,6 +90,7 @@ Search functionality (`#/search?q=` parameter)
 
 ## 🧪 Payload Used
 
+```html
 "><img src=x onerror=alert(1)>
 
 
