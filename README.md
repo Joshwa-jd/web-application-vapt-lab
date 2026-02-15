@@ -92,6 +92,7 @@ Search functionality (`#/search?q=` parameter)
 
 ```html
 "><img src=x onerror=alert(1)>
+```
 
 
 
