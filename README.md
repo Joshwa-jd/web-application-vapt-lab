@@ -136,3 +136,72 @@ Estimated CVSS Score: **8.2**
 - Implement Content Security Policy (CSP)
 - Use secure templating with automatic escaping
 
+
+---
+
+# 🟡 Insecure Direct Object Reference (IDOR)
+
+## 📌 Vulnerability Summary
+
+An IDOR vulnerability was identified in the basket endpoint of the application.  
+The application allows direct access to resources using numeric IDs without verifying ownership.
+
+An authenticated user can modify the ID in the request and access another user's basket data.
+
+---
+
+## 🎯 Affected Endpoint
+
+GET /rest/basket/{id}
+
+---
+
+## 🧪 Proof of Concept
+
+The attacker modified the basket ID from their own ID to another user's ID.
+
+Example:
+
+/rest/basket/6  → changed to →  /rest/basket/2
+
+The server returned basket details belonging to another user.
+
+---
+
+## 📸 Evidence
+
+### 1️⃣ Modified Request (ID Tampering)
+
+![IDOR Request](reports/screenshots/06-idor-request.png)
+
+---
+
+### 2️⃣ Unauthorized Data Accessed
+
+![IDOR Response](reports/screenshots/07-idor-response.png)
+
+---
+
+## 💥 Impact
+
+- Unauthorized data exposure
+- Horizontal privilege escalation
+- Access to other users' sensitive data
+- Potential data manipulation
+
+---
+
+## 📊 Risk Rating
+
+Severity: **High**  
+Estimated CVSS Score: **8.0**
+
+---
+
+## 🛡 Recommended Remediation
+
+- Implement proper authorization checks
+- Validate resource ownership on server-side
+- Avoid direct object references
+- Use indirect reference maps or UUIDs
+- Enforce role-based access control (RBAC)
