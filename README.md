@@ -181,6 +181,7 @@ The server returned basket details belonging to another user.
 ![IDOR Response](reports/screenshots/07-idor-response.png)
 
 
+
 ---
 
 ## 💥 Impact
@@ -191,7 +192,6 @@ The server returned basket details belonging to another user.
 - Potential data manipulation
 
 ---
-
 ## 📊 Risk Rating
 
 Severity: **High**  
